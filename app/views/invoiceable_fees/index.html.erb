@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Invoiceable Fees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Guid</th>
+      <th>Product code</th>
+      <th>Kind</th>
+      <th>Description</th>
+      <th>Required at move in</th>
+      <th>Required at transfer</th>
+      <th>Amount</th>
+      <th>Short description</th>
+      <th>Show in sales center</th>
+      <th>Tax total</th>
+      <th>Total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @invoiceable_fees.each do |invoiceable_fee| %>
+      <tr>
+        <td><%= invoiceable_fee.guid %></td>
+        <td><%= invoiceable_fee.product_code %></td>
+        <td><%= invoiceable_fee.kind %></td>
+        <td><%= invoiceable_fee.description %></td>
+        <td><%= invoiceable_fee.required_at_move_in %></td>
+        <td><%= invoiceable_fee.required_at_transfer %></td>
+        <td><%= invoiceable_fee.amount %></td>
+        <td><%= invoiceable_fee.short_description %></td>
+        <td><%= invoiceable_fee.show_in_sales_center %></td>
+        <td><%= invoiceable_fee.tax_total %></td>
+        <td><%= invoiceable_fee.total %></td>
+        <td><%= link_to 'Show', invoiceable_fee %></td>
+        <td><%= link_to 'Edit', edit_invoiceable_fee_path(invoiceable_fee) %></td>
+        <td><%= link_to 'Destroy', invoiceable_fee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Invoiceable Fee', new_invoiceable_fee_path %>

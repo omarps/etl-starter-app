@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guid: MyString
+  name: MyString
+  channel_rates_on: false
+  internal: 
+
+two:
+  guid: MyString
+  name: MyString
+  channel_rates_on: false
+  internal: 

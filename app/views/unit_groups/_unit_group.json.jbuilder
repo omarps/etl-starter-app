@@ -1,0 +1,2 @@
+json.extract! unit_group, :id, :guid, :price, :group_key, :name, :available_units_count, :total_units_count, :total_non_excluded_units_count, :size, :standard_rate, :floor, :reduced_price, :occupancy_percent, :area, :length, :width, :height, :due_at_move_in, :due_at_move_in_without_fees, :due_monthly, :attribute_description, :description, :average_rent, :active_rate_type, :channel_rate_id, :unit_type_id, :created_at, :updated_at
+json.url unit_group_url(unit_group, format: :json)

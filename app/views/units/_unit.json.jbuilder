@@ -1,0 +1,2 @@
+json.extract! unit, :id, :price, :name, :description, :area, :uom, :width, :length, :height, :door_height, :door_width, :door_type, :access_type, :floor, :size, :standard_rate, :managed_rate, :available_for_move_in, :rentable, :status, :payment_status, :current_ledger_guid, :current_tenant_guid, :combination_lock_number, :attribute_description, :deleted, :damaged, :complimentary, :unit_group_id, :created_at, :updated_at
+json.url unit_url(unit, format: :json)

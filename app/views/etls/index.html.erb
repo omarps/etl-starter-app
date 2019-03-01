@@ -1,0 +1,27 @@
+<h1>ETL Parser Assignment</h1>
+<h2>Actions</h2>
+<a href="?etl=unit_groups.json">Unit Groups JSON</a>
+<br/>
+<a href="?etl=units.json">Unit JSON/CSV</a>
+<br/>
+<h2>Models</h2>
+<a target="_blank" href="/erd.pdf">ERD Model</a>
+<br/>
+<ul>
+  <li><a target="_blank" href="<%= unit_groups_path %>">Unit Groups</a></li>
+  <ul>
+    <li><a target="_blank" href="<%= invoiceable_fees_path %>">Invoiceable Fee</a></li>
+    <li><a target="_blank" href="<%= channel_rates_path %>">Channel Rate</a></li>
+    <li><a target="_blank" href="<%= unit_types_path %>">Unit Type</a></li>
+    <li><a target="_blank" href="<%= discount_plans_path %>">Discount Plan</a></li>
+    <ul>
+      <li><a target="_blank" href="<%= discounts_path %>">Discount</a></li>
+      <li><a target="_blank" href="<%= controls_path %>">Control</a></li>
+      <li><a target="_blank" href="<%= client_applications_path %>">Client Application</a></li>
+    </ul>
+  </ul>
+  <li><a target="_blank" href="<%= units_path %>">Units</a></li>
+  <ul>
+    <li><a target="_blank" href="<%= unit_amenities_path %>">Unit Amenity</a></li>
+  </ul>
+</ul>

@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Unit Groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Guid</th>
+      <th>Price</th>
+      <th>Group key</th>
+      <th>Name</th>
+      <th>Available units count</th>
+      <th>Total units count</th>
+      <th>Total non excluded units count</th>
+      <th>Size</th>
+      <th>Standard rate</th>
+      <th>Floor</th>
+      <th>Reduced price</th>
+      <th>Occupancy percent</th>
+      <th>Area</th>
+      <th>Length</th>
+      <th>Width</th>
+      <th>Height</th>
+      <th>Due at move in</th>
+      <th>Due at move in without fees</th>
+      <th>Due monthly</th>
+      <th>Attribute description</th>
+      <th>Description</th>
+      <th>Average rent</th>
+      <th>Active rate type</th>
+      <th>Channel rate</th>
+      <th>Unit type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @unit_groups.each do |unit_group| %>
+      <tr>
+        <td><%= unit_group.guid %></td>
+        <td><%= unit_group.price %></td>
+        <td><%= unit_group.group_key %></td>
+        <td><%= unit_group.name %></td>
+        <td><%= unit_group.available_units_count %></td>
+        <td><%= unit_group.total_units_count %></td>
+        <td><%= unit_group.total_non_excluded_units_count %></td>
+        <td><%= unit_group.size %></td>
+        <td><%= unit_group.standard_rate %></td>
+        <td><%= unit_group.floor %></td>
+        <td><%= unit_group.reduced_price %></td>
+        <td><%= unit_group.occupancy_percent %></td>
+        <td><%= unit_group.area %></td>
+        <td><%= unit_group.length %></td>
+        <td><%= unit_group.width %></td>
+        <td><%= unit_group.height %></td>
+        <td><%= unit_group.due_at_move_in %></td>
+        <td><%= unit_group.due_at_move_in_without_fees %></td>
+        <td><%= unit_group.due_monthly %></td>
+        <td><%= unit_group.attribute_description %></td>
+        <td><%= unit_group.description %></td>
+        <td><%= unit_group.average_rent %></td>
+        <td><%= unit_group.active_rate_type %></td>
+        <td><%= unit_group.channel_rate %></td>
+        <td><%= unit_group.unit_type %></td>
+        <td><%= link_to 'Show', unit_group %></td>
+        <td><%= link_to 'Edit', edit_unit_group_path(unit_group) %></td>
+        <td><%= link_to 'Destroy', unit_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Unit Group', new_unit_group_path %>

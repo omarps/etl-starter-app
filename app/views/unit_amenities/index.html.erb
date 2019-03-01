@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Unit Amenities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Guid</th>
+      <th>Name</th>
+      <th>Short code</th>
+      <th>Show in sales center filter dropdown</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @unit_amenities.each do |unit_amenity| %>
+      <tr>
+        <td><%= unit_amenity.guid %></td>
+        <td><%= unit_amenity.name %></td>
+        <td><%= unit_amenity.short_code %></td>
+        <td><%= unit_amenity.show_in_sales_center_filter_dropdown %></td>
+        <td><%= link_to 'Show', unit_amenity %></td>
+        <td><%= link_to 'Edit', edit_unit_amenity_path(unit_amenity) %></td>
+        <td><%= link_to 'Destroy', unit_amenity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Unit Amenity', new_unit_amenity_path %>

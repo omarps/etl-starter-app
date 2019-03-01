@@ -1,0 +1,81 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Units</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Area</th>
+      <th>Uom</th>
+      <th>Width</th>
+      <th>Length</th>
+      <th>Height</th>
+      <th>Door height</th>
+      <th>Door width</th>
+      <th>Door type</th>
+      <th>Access type</th>
+      <th>Floor</th>
+      <th>Size</th>
+      <th>Standard rate</th>
+      <th>Managed rate</th>
+      <th>Available for move in</th>
+      <th>Rentable</th>
+      <th>Status</th>
+      <th>Payment status</th>
+      <th>Current ledger guid</th>
+      <th>Current tenant guid</th>
+      <th>Combination lock number</th>
+      <th>Attribute description</th>
+      <th>Deleted</th>
+      <th>Damaged</th>
+      <th>Complimentary</th>
+      <th>Unit group</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @units.each do |unit| %>
+      <tr>
+        <td><%= unit.price %></td>
+        <td><%= unit.name %></td>
+        <td><%= unit.description %></td>
+        <td><%= unit.area %></td>
+        <td><%= unit.uom %></td>
+        <td><%= unit.width %></td>
+        <td><%= unit.length %></td>
+        <td><%= unit.height %></td>
+        <td><%= unit.door_height %></td>
+        <td><%= unit.door_width %></td>
+        <td><%= unit.door_type %></td>
+        <td><%= unit.access_type %></td>
+        <td><%= unit.floor %></td>
+        <td><%= unit.size %></td>
+        <td><%= unit.standard_rate %></td>
+        <td><%= unit.managed_rate %></td>
+        <td><%= unit.available_for_move_in %></td>
+        <td><%= unit.rentable %></td>
+        <td><%= unit.status %></td>
+        <td><%= unit.payment_status %></td>
+        <td><%= unit.current_ledger_guid %></td>
+        <td><%= unit.current_tenant_guid %></td>
+        <td><%= unit.combination_lock_number %></td>
+        <td><%= unit.attribute_description %></td>
+        <td><%= unit.deleted %></td>
+        <td><%= unit.damaged %></td>
+        <td><%= unit.complimentary %></td>
+        <td><%= unit.unit_group %></td>
+        <td><%= link_to 'Show', unit %></td>
+        <td><%= link_to 'Edit', edit_unit_path(unit) %></td>
+        <td><%= link_to 'Destroy', unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Unit', new_unit_path %>

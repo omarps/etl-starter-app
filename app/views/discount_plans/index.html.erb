@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Discount Plans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Guid</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Public description</th>
+      <th>Availability text</th>
+      <th>Requirements text</th>
+      <th>Kind</th>
+      <th>Min occupancy required</th>
+      <th>Min occupancy months</th>
+      <th>Prepay required</th>
+      <th>Prepay months</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Auto apply</th>
+      <th>Promotion type</th>
+      <th>Deleted</th>
+      <th>Turned on</th>
+      <th>Available for all facilities</th>
+      <th>Round to nearest</th>
+      <th>Hide from website</th>
+      <th>Move in only</th>
+      <th>Tenant account kind guid</th>
+      <th>Existing tenant only</th>
+      <th>Priority</th>
+      <th>Role permission</th>
+      <th>Api association guids</th>
+      <th>Always discount plan discount guid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @discount_plans.each do |discount_plan| %>
+      <tr>
+        <td><%= discount_plan.guid %></td>
+        <td><%= discount_plan.name %></td>
+        <td><%= discount_plan.description %></td>
+        <td><%= discount_plan.public_description %></td>
+        <td><%= discount_plan.availability_text %></td>
+        <td><%= discount_plan.requirements_text %></td>
+        <td><%= discount_plan.kind %></td>
+        <td><%= discount_plan.min_occupancy_required %></td>
+        <td><%= discount_plan.min_occupancy_months %></td>
+        <td><%= discount_plan.prepay_required %></td>
+        <td><%= discount_plan.prepay_months %></td>
+        <td><%= discount_plan.start_date %></td>
+        <td><%= discount_plan.end_date %></td>
+        <td><%= discount_plan.auto_apply %></td>
+        <td><%= discount_plan.promotion_type %></td>
+        <td><%= discount_plan.deleted %></td>
+        <td><%= discount_plan.turned_on %></td>
+        <td><%= discount_plan.available_for_all_facilities %></td>
+        <td><%= discount_plan.round_to_nearest %></td>
+        <td><%= discount_plan.hide_from_website %></td>
+        <td><%= discount_plan.move_in_only %></td>
+        <td><%= discount_plan.tenant_account_kind_guid %></td>
+        <td><%= discount_plan.existing_tenant_only %></td>
+        <td><%= discount_plan.priority %></td>
+        <td><%= discount_plan.role_permission %></td>
+        <td><%= discount_plan.api_association_guids %></td>
+        <td><%= discount_plan.always_discount_plan_discount_guid %></td>
+        <td><%= link_to 'Show', discount_plan %></td>
+        <td><%= link_to 'Edit', edit_discount_plan_path(discount_plan) %></td>
+        <td><%= link_to 'Destroy', discount_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Discount Plan', new_discount_plan_path %>

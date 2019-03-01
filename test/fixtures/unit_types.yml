@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guid: MyString
+  name: MyString
+  deleted: 
+  internal_account_code: MyString
+  code_and_description: MyString
+
+two:
+  guid: MyString
+  name: MyString
+  deleted: 
+  internal_account_code: MyString
+  code_and_description: MyString

@@ -1,0 +1,152 @@
+<%= form_with(model: discount_plan, local: true) do |form| %>
+  <% if discount_plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(discount_plan.errors.count, "error") %> prohibited this discount_plan from being saved:</h2>
+
+      <ul>
+      <% discount_plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :guid %>
+    <%= form.text_field :guid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :public_description %>
+    <%= form.text_field :public_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :availability_text %>
+    <%= form.text_field :availability_text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :requirements_text %>
+    <%= form.text_field :requirements_text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kind %>
+    <%= form.text_field :kind %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_occupancy_required %>
+    <%= form.check_box :min_occupancy_required %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_occupancy_months %>
+    <%= form.number_field :min_occupancy_months %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prepay_required %>
+    <%= form.check_box :prepay_required %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prepay_months %>
+    <%= form.number_field :prepay_months %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :auto_apply %>
+    <%= form.check_box :auto_apply %>
+  </div>
+
+  <div class="field">
+    <%= form.label :promotion_type %>
+    <%= form.text_field :promotion_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deleted %>
+    <%= form.check_box :deleted %>
+  </div>
+
+  <div class="field">
+    <%= form.label :turned_on %>
+    <%= form.check_box :turned_on %>
+  </div>
+
+  <div class="field">
+    <%= form.label :available_for_all_facilities %>
+    <%= form.check_box :available_for_all_facilities %>
+  </div>
+
+  <div class="field">
+    <%= form.label :round_to_nearest %>
+    <%= form.check_box :round_to_nearest %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hide_from_website %>
+    <%= form.check_box :hide_from_website %>
+  </div>
+
+  <div class="field">
+    <%= form.label :move_in_only %>
+    <%= form.check_box :move_in_only %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tenant_account_kind_guid %>
+    <%= form.text_field :tenant_account_kind_guid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :existing_tenant_only %>
+    <%= form.check_box :existing_tenant_only %>
+  </div>
+
+  <div class="field">
+    <%= form.label :priority %>
+    <%= form.number_field :priority %>
+  </div>
+
+  <div class="field">
+    <%= form.label :role_permission %>
+    <%= form.text_field :role_permission %>
+  </div>
+
+  <div class="field">
+    <%= form.label :api_association_guids %>
+    <%= form.text_area :api_association_guids %>
+  </div>
+
+  <div class="field">
+    <%= form.label :always_discount_plan_discount_guid %>
+    <%= form.text_field :always_discount_plan_discount_guid %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

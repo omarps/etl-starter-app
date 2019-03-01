@@ -1,0 +1,62 @@
+<%= form_with(model: channel_rate, local: true) do |form| %>
+  <% if channel_rate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(channel_rate.errors.count, "error") %> prohibited this channel_rate from being saved:</h2>
+
+      <ul>
+      <% channel_rate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :base_rate_type %>
+    <%= form.text_field :base_rate_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modifier_type %>
+    <%= form.text_field :modifier_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :turned_on %>
+    <%= form.check_box :turned_on %>
+  </div>
+
+  <div class="field">
+    <%= form.label :turned_off_on %>
+    <%= form.check_box :turned_off_on %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rate %>
+    <%= form.text_field :rate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :channel_name %>
+    <%= form.text_field :channel_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :channel_guid %>
+    <%= form.text_field :channel_guid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :facility_guid %>
+    <%= form.text_field :facility_guid %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

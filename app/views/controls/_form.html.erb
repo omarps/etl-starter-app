@@ -1,0 +1,57 @@
+<%= form_with(model: control, local: true) do |form| %>
+  <% if control.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(control.errors.count, "error") %> prohibited this control from being saved:</h2>
+
+      <ul>
+      <% control.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :guid %>
+    <%= form.text_field :guid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kind %>
+    <%= form.text_field :kind %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_value %>
+    <%= form.number_field :min_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_value %>
+    <%= form.number_field :max_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deleted %>
+    <%= form.check_box :deleted %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deleted_on %>
+    <%= form.date_select :deleted_on %>
+  </div>
+
+  <div class="field">
+    <%= form.label :requirements_text %>
+    <%= form.text_field :requirements_text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :applicable_discount_plans_count %>
+    <%= form.number_field :applicable_discount_plans_count %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

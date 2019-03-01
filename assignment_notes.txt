@@ -1,0 +1,113 @@
+# rails-erd
+sudo apt-get update
+sudo apt-get install graphviz
+rails db:migrate
+rake erd
+
+# git
+git config --get remote.origin.url
+
+# simples
+rails g model channel_rate guid:string base_rate_type:string modifier_type:string turned_on:boolean turned_off_on:boolean rate:float amount:float channel_name:string channel_guid:string facility_guid:string
+rails g model unit_type guid:string name:string deleted:boolean internal_account_code:string code_and_description:string
+rails g model discount guid:string discount_type:string month_number:integer amount:float minimum_amount:float maximum_amount:float
+rails g model client_application guid:string name:string channel_rates_on:boolean internal:boolean
+
+# requires join table to unit_group
+rails g model invoiceable_fee guid:string product_code:string kind:string description:string required_at_move_in:boolean required_at_transfer:boolean amount:integer short_description:string show_in_sales_center:boolean tax_total:integer total:integer
+rails g model unit_amenity guid:string name:string short_code:string show_in_sales_center_filter_dropdown:boolean
+
+rails g model control guid:string kind:string min_value:integer max_value:integer deleted:boolean deleted_on:date requirements_text:string applicable_discount_plans_count:integer
+# add array [guid] discount_plan_ids:text xx
+# join table: unit_amenity_ids
+
+# requires array and join table
+rails g model discount_plan guid:string name:string description:string public_description:string availability_text:string requirements_text:string kind:string min_occupancy_required:boolean min_occupancy_months:integer prepay_required:boolean prepay_months:integer start_date:date end_date:date auto_apply:boolean promotion_type:string deleted:boolean turned_on:boolean available_for_all_facilities:boolean round_to_nearest:boolean hide_from_website:boolean move_in_only:boolean tenant_account_kind_guid:string existing_tenant_only:boolean priority:integer role_permission:string always_discount_plan_discount_guid:string
+# add array [guid]
+rails g migration add_facility_guids_to_discount_plans facility_guids:text
+# add_column :discount_plans, :facility_guids, :text, default: [].to_yaml, array:true
+rails g migration api_association_guids_to_discount_plans api_association_guids:text
+# add_column :discount_plans, :api_association_guids, :text, default: [].to_yaml, array:true
+# join table: discount_plan_discounts, discount_plan_controls, client_applications?? []
+
+rails g model unit_group guid:string price:float group_key:string name:string available_units_count:integer total_units_count:integer total_non_excluded_units_count:integer size:string standard_rate:integer floor:integer reduced_price:float occupancy_percent:integer area:integer length:integer width:integer height:integer due_at_move_in:float due_at_move_in_without_fees:float due_monthly:integer attribute_description:string description:string average_rent:float active_rate_type:string channel_rate:references unit_type:references
+# add array [guid]
+rails g migration add_scheduled_move_out_guids_to_unit_groups scheduled_move_out_guids:text
+# add_column :unit_groups, :scheduled_move_out_guids, :text, default: [].to_yaml, array:true
+rails g migration add_channel_rate_guids_to_unit_groups channel_rate_guids:text
+# add_column :unit_groups, :channel_rate_guids, :text, default: [].to_yaml, array:true
+# join table unit_amenities - xx keep only to units
+# join table: invoiceable_fees, discount_plans
+
+rails g migration add_fields_to_units guid:string width:integer length:integer height:intege door_height:intege door_width:intege door_type:string access_type:strin floor:intege size:strin standard_rate:floa managed_rate:floa available_for_move_in:boolea rentable:boolea status:string payment_status:strin current_ledger_guid:strin current_tenant_guid:strin combination_lock_number:strin attribute_description:strin deleted:boolea damaged:boolea complimentary:boolean unit_group:references
+# xx channel_rate keep only unit group
+# join table unit_amenities
+
+# join tables ###############
+# has_and_belongs_to_many
+rails g migration CreateDiscountPlansDiscountsJoinTable discount_plans discounts
+rails g migration CreateDiscountPlansControlsJoinTable discount_plans controls
+rails g migration CreateDiscountPlansClientApplicationsJoinTable discount_plans client_applications
+rails g migration CreateUnitGroupsInvoiceableFeesJoinTable unit_groups invoiceable_fees
+rails g migration CreateUnitGroupsDiscountPlansJoinTable unit_groups discount_plans
+rails g migration CreateControlsUnitAmenitiesJoinTable controls unit_amenities
+rails g migration CreateUnitAmenitiesUnitsJoinTable unit_amenities units
+
+# generate scaffold
+rails g scaffold_controller guid:string channel_rate base_rate_type:string modifier_type:string turned_on:boolean turned_off_on:boolean rate:float amount:float channel_name:string channel_guid:string facility_guid:string
+rails g scaffold_controller unit_type guid:string name:string deleted:boolean internal_account_code:string code_and_description:string
+rails g scaffold_controller discount guid:string discount_type:string month_number:integer amount:float minimum_amount:float maximum_amount:float
+rails g scaffold_controller client_application guid:string name:string channel_rates_on:boolean internal:boolean
+rails g scaffold_controller invoiceable_fee guid:string product_code:string kind:string description:string required_at_move_in:boolean required_at_transfer:boolean amount:integer short_description:string show_in_sales_center:boolean tax_total:integer total:integer
+rails g scaffold_controller unit_amenity guid:string name:string short_code:string show_in_sales_center_filter_dropdown:boolean
+rails g scaffold_controller control guid:string kind:string min_value:integer max_value:integer deleted:boolean deleted_on:date requirements_text:string applicable_discount_plans_count:integer unit_type:references
+rails g scaffold_controller discount_plan guid:string name:string description:string public_description:string availability_text:string requirements_text:string kind:string min_occupancy_required:boolean min_occupancy_months:integer prepay_required:boolean prepay_months:integer start_date:date end_date:date auto_apply:boolean promotion_type:string deleted:boolean turned_on:boolean available_for_all_facilities:boolean round_to_nearest:boolean hide_from_website:boolean move_in_only:boolean tenant_account_kind_guid:string existing_tenant_only:boolean priority:integer role_permission:string api_association_guids:text always_discount_plan_discount_guid:string
+rails g scaffold_controller unit_group guid:string price:float group_key:string name:string available_units_count:integer total_units_count:integer total_non_excluded_units_count:integer size:string standard_rate:integer floor:integer reduced_price:float occupancy_percent:integer area:integer length:integer width:integer height:integer due_at_move_in:float due_at_move_in_without_fees:float due_monthly:integer attribute_description:string description:string average_rent:float active_rate_type:string channel_rate:references unit_type:references
+rails g scaffold_controller unit price:decimal name:string description:text area:float uom:string width:integer length:integer height:intege door_height:intege door_width:intege door_type:string access_type:strin floor:intege size:strin standard_rate:floa managed_rate:floa available_for_move_in:boolea rentable:boolea status:string payment_status:strin current_ledger_guid:strin current_tenant_guid:strin combination_lock_number:strin attribute_description:strin deleted:boolea damaged:boolea complimentary:boolean unit_group:references
+
+# Rails.root.join('data', 'json', "#{filename}")
+# json parse
+require 'json'
+json_text = File.read('./data/json/unit_groups.json')
+json_hash = JSON.parse(json_text)
+json_hash['unit_groups'][0]['discount_plans']
+
+json_text = File.read('./data/json/DCBYVBGDGTKTAKJWYSJJ_units.json')
+json_hash = JSON.parse(json_text)
+json_hash['units'][0]['unit_amenities']
+
+# csv parse
+require 'csv'
+csv_text = File.read('./data/csv/units.csv')
+csv = CSV.parse(csv_text, :headers => true)
+csv.headers
+csv[0][0]
+csv[0].to_hash['id']
+csv.each do |row|
+  Moulding.create!(row.to_hash)
+end
+
+# map keys example
+ages.map {|k, v| [mappings[k], v] }.to_h
+
+# testing-our-gem
+https://bundler.io/v2.0/guides/creating_gem.html#testing-our-gem
+https://bundler.io/v2.0/guides/creating_gem.html#using-other-gems
+https://bundler.io/v2.0/guides/creating_gem.html#testing-a-command-line-interface
+
+# kill server
+lsof -wni tcp:8080
+kill -9 <PID>
+
+# actions
+# unit_groups
+# - invoiceable_fees
+# - channel_rate
+# - unit_type
+# - discount_plans
+# - - discounts
+# - - controls
+# - - client_applications
+# units
+# - unit_amenities
+# - unit_group_id

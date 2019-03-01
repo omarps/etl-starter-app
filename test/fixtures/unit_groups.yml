@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guid: 
+  price: 1.5
+  group_key: 
+  name: 
+  available_units_count: 1
+  total_units_count: 1
+  total_non_excluded_units_count: 1
+  size: MyString
+  standard_rate: 1
+  floor: 1
+  reduced_price: 1.5
+  occupancy_percent: 1
+  area: 1
+  length: 1
+  width: 1
+  height: 1
+  due_at_move_in: 1.5
+  due_at_move_in_without_fees: 1.5
+  due_monthly: 1
+  attribute_description: MyString
+  description: MyString
+  average_rent: 1.5
+  active_rate_type: MyString
+  channel_rate: one
+  unit_type: one
+
+two:
+  guid: 
+  price: 1.5
+  group_key: 
+  name: 
+  available_units_count: 1
+  total_units_count: 1
+  total_non_excluded_units_count: 1
+  size: MyString
+  standard_rate: 1
+  floor: 1
+  reduced_price: 1.5
+  occupancy_percent: 1
+  area: 1
+  length: 1
+  width: 1
+  height: 1
+  due_at_move_in: 1.5
+  due_at_move_in_without_fees: 1.5
+  due_monthly: 1
+  attribute_description: MyString
+  description: MyString
+  average_rent: 1.5
+  active_rate_type: MyString
+  channel_rate: two
+  unit_type: two

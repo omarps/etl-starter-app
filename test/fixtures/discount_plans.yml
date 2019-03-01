@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guid: MyString
+  name: MyString
+  description: MyString
+  public_description: MyString
+  availability_text: MyString
+  requirements_text: MyString
+  kind: MyString
+  min_occupancy_required: false
+  min_occupancy_months: 1
+  prepay_required: false
+  prepay_months: 1
+  start_date: 2019-02-26
+  end_date: 2019-02-26
+  auto_apply: false
+  promotion_type: MyString
+  deleted: false
+  turned_on: false
+  available_for_all_facilities: false
+  round_to_nearest: false
+  hide_from_website: false
+  move_in_only: false
+  tenant_account_kind_guid: MyString
+  existing_tenant_only: false
+  priority: 1
+  role_permission: MyString
+  api_association_guids: MyText
+  always_discount_plan_discount_guid: MyString
+
+two:
+  guid: MyString
+  name: MyString
+  description: MyString
+  public_description: MyString
+  availability_text: MyString
+  requirements_text: MyString
+  kind: MyString
+  min_occupancy_required: false
+  min_occupancy_months: 1
+  prepay_required: false
+  prepay_months: 1
+  start_date: 2019-02-26
+  end_date: 2019-02-26
+  auto_apply: false
+  promotion_type: MyString
+  deleted: false
+  turned_on: false
+  available_for_all_facilities: false
+  round_to_nearest: false
+  hide_from_website: false
+  move_in_only: false
+  tenant_account_kind_guid: MyString
+  existing_tenant_only: false
+  priority: 1
+  role_permission: MyString
+  api_association_guids: MyText
+  always_discount_plan_discount_guid: MyString

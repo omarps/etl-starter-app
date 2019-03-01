@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Guid:</strong>
+  <%= @control.guid %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @control.kind %>
+</p>
+
+<p>
+  <strong>Min value:</strong>
+  <%= @control.min_value %>
+</p>
+
+<p>
+  <strong>Max value:</strong>
+  <%= @control.max_value %>
+</p>
+
+<p>
+  <strong>Deleted:</strong>
+  <%= @control.deleted %>
+</p>
+
+<p>
+  <strong>Deleted on:</strong>
+  <%= @control.deleted_on %>
+</p>
+
+<p>
+  <strong>Requirements text:</strong>
+  <%= @control.requirements_text %>
+</p>
+
+<p>
+  <strong>Applicable discount plans count:</strong>
+  <%= @control.applicable_discount_plans_count %>
+</p>
+
+<%= link_to 'Edit', edit_control_path(@control) %> |
+<%= link_to 'Back', controls_path %>

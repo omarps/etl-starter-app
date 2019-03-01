@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Guid:</strong>
+  <%= @unit_amenity.guid %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @unit_amenity.name %>
+</p>
+
+<p>
+  <strong>Short code:</strong>
+  <%= @unit_amenity.short_code %>
+</p>
+
+<p>
+  <strong>Show in sales center filter dropdown:</strong>
+  <%= @unit_amenity.show_in_sales_center_filter_dropdown %>
+</p>
+
+<%= link_to 'Edit', edit_unit_amenity_path(@unit_amenity) %> |
+<%= link_to 'Back', unit_amenities_path %>

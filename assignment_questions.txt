@@ -1,0 +1,46 @@
+===========================================================
+Ok, that's sounds good to me.
+Another question:
+Do I have to keep track of the alphanumeric IDs as well?
+--
+[OK] Yes, please do. Generally we do not want to lose information from the raw dataset.
+It's up to you to how to best go about it.
+--
+Imma persist as GUID string. (wo validation given time constraints)
+===========================================================
+I have some questions related to the exercise.
+The starter app has a short definition of the Unit model.
+I'm assuming that:
+[OK]- I need to develop the related objects and add more migrations to the starter app.
+>>> [pending]- Testing artifacts for the ETL gem.
+--
+Yes
+-----------------------------------------------------------
+Given that,
+- Is there any reason why we are keeping track of 
+the channel rate and unit amenities in both Unit and UnitGroup?
+--
+[OK] Good catch. You may choose to get channel rate and unit amenities from either Unit or UnitGroup.
+This is an example of how to fix 'bad' data coming from a source we do not control.
+--
+unit group - channel rate
+unit - unit amenities
+-----------------------------------------------------------
+- Do I need also to persist the file's metadata? (pagination, status, etc)
+--
+[OK] No need.
+-----------------------------------------------------------
+- Do I need to support both file types: CSV and JSON?
+--
+[pending] Yes, we'll need your exercise to be able to import from CSV and JSON.
+-----------------------------------------------------------
+- Can I define the ETL gem as a standalone one?
+I mean, to be able to use it directly in the rails console or with a rake task.
+--
+[OK] No need to separate the ETL gem since it is already vendored in the starter app.
+-----------------------------------------------------------
+- Do I need to add some data visualization pages to view the units' data?
+Thanks in advance.
+--
+[OK] Some simple pages (e.g. scaffold) would suffice.
+===========================================================

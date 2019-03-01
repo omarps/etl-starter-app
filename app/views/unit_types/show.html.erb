@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Guid:</strong>
+  <%= @unit_type.guid %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @unit_type.name %>
+</p>
+
+<p>
+  <strong>Deleted:</strong>
+  <%= @unit_type.deleted %>
+</p>
+
+<p>
+  <strong>Internal account code:</strong>
+  <%= @unit_type.internal_account_code %>
+</p>
+
+<p>
+  <strong>Code and description:</strong>
+  <%= @unit_type.code_and_description %>
+</p>
+
+<%= link_to 'Edit', edit_unit_type_path(@unit_type) %> |
+<%= link_to 'Back', unit_types_path %>

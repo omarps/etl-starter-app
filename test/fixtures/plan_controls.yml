@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guid: MyString
+  kind: MyString
+  min_value: 
+  max_value: 1
+  deleted: false
+  deleted_on: 2019-02-26
+  requirements_text: MyString
+  applicable_discount_plans_count: 1
+  unit_type: one
+
+two:
+  guid: MyString
+  kind: MyString
+  min_value: 
+  max_value: 1
+  deleted: false
+  deleted_on: 2019-02-26
+  requirements_text: MyString
+  applicable_discount_plans_count: 1
+  unit_type: two

@@ -1,0 +1,72 @@
+<%= form_with(model: invoiceable_fee, local: true) do |form| %>
+  <% if invoiceable_fee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(invoiceable_fee.errors.count, "error") %> prohibited this invoiceable_fee from being saved:</h2>
+
+      <ul>
+      <% invoiceable_fee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :guid %>
+    <%= form.text_field :guid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_code %>
+    <%= form.text_field :product_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kind %>
+    <%= form.text_field :kind %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :required_at_move_in %>
+    <%= form.check_box :required_at_move_in %>
+  </div>
+
+  <div class="field">
+    <%= form.label :required_at_transfer %>
+    <%= form.check_box :required_at_transfer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.number_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :short_description %>
+    <%= form.text_field :short_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :show_in_sales_center %>
+    <%= form.check_box :show_in_sales_center %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tax_total %>
+    <%= form.number_field :tax_total %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total %>
+    <%= form.number_field :total %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

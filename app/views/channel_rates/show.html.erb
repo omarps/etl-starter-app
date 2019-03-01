@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Base rate type:</strong>
+  <%= @channel_rate.base_rate_type %>
+</p>
+
+<p>
+  <strong>Modifier type:</strong>
+  <%= @channel_rate.modifier_type %>
+</p>
+
+<p>
+  <strong>Turned on:</strong>
+  <%= @channel_rate.turned_on %>
+</p>
+
+<p>
+  <strong>Turned off on:</strong>
+  <%= @channel_rate.turned_off_on %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @channel_rate.rate %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @channel_rate.amount %>
+</p>
+
+<p>
+  <strong>Channel name:</strong>
+  <%= @channel_rate.channel_name %>
+</p>
+
+<p>
+  <strong>Channel guid:</strong>
+  <%= @channel_rate.channel_guid %>
+</p>
+
+<p>
+  <strong>Facility guid:</strong>
+  <%= @channel_rate.facility_guid %>
+</p>
+
+<%= link_to 'Edit', edit_channel_rate_path(@channel_rate) %> |
+<%= link_to 'Back', channel_rates_path %>

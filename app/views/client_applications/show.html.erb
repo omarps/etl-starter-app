@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Guid:</strong>
+  <%= @client_application.guid %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @client_application.name %>
+</p>
+
+<p>
+  <strong>Channel rates on:</strong>
+  <%= @client_application.channel_rates_on %>
+</p>
+
+<p>
+  <strong>Internal:</strong>
+  <%= @client_application.internal %>
+</p>
+
+<%= link_to 'Edit', edit_client_application_path(@client_application) %> |
+<%= link_to 'Back', client_applications_path %>

@@ -1,0 +1,142 @@
+<%= form_with(model: unit_group, local: true) do |form| %>
+  <% if unit_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(unit_group.errors.count, "error") %> prohibited this unit_group from being saved:</h2>
+
+      <ul>
+      <% unit_group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :guid %>
+    <%= form.text_field :guid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :group_key %>
+    <%= form.text_field :group_key %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :available_units_count %>
+    <%= form.number_field :available_units_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_units_count %>
+    <%= form.number_field :total_units_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_non_excluded_units_count %>
+    <%= form.number_field :total_non_excluded_units_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.text_field :size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :standard_rate %>
+    <%= form.number_field :standard_rate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :floor %>
+    <%= form.number_field :floor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reduced_price %>
+    <%= form.text_field :reduced_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :occupancy_percent %>
+    <%= form.number_field :occupancy_percent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :area %>
+    <%= form.number_field :area %>
+  </div>
+
+  <div class="field">
+    <%= form.label :length %>
+    <%= form.number_field :length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :width %>
+    <%= form.number_field :width %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.number_field :height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :due_at_move_in %>
+    <%= form.text_field :due_at_move_in %>
+  </div>
+
+  <div class="field">
+    <%= form.label :due_at_move_in_without_fees %>
+    <%= form.text_field :due_at_move_in_without_fees %>
+  </div>
+
+  <div class="field">
+    <%= form.label :due_monthly %>
+    <%= form.number_field :due_monthly %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attribute_description %>
+    <%= form.text_field :attribute_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :average_rent %>
+    <%= form.text_field :average_rent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active_rate_type %>
+    <%= form.text_field :active_rate_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :channel_rate_id %>
+    <%= form.text_field :channel_rate_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unit_type_id %>
+    <%= form.text_field :unit_type_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

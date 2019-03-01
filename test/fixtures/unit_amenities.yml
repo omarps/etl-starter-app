@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guid: MyString
+  name: MyString
+  short_code: MyString
+  show_in_sales_center_filter_dropdown: false
+
+two:
+  guid: MyString
+  name: MyString
+  short_code: MyString
+  show_in_sales_center_filter_dropdown: false

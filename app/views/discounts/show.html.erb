@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Guid:</strong>
+  <%= @discount.guid %>
+</p>
+
+<p>
+  <strong>Discount type:</strong>
+  <%= @discount.discount_type %>
+</p>
+
+<p>
+  <strong>Month number:</strong>
+  <%= @discount.month_number %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @discount.amount %>
+</p>
+
+<p>
+  <strong>Minimum amount:</strong>
+  <%= @discount.minimum_amount %>
+</p>
+
+<p>
+  <strong>Maximum amount:</strong>
+  <%= @discount.maximum_amount %>
+</p>
+
+<%= link_to 'Edit', edit_discount_path(@discount) %> |
+<%= link_to 'Back', discounts_path %>

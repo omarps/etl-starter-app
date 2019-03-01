@@ -1,0 +1,37 @@
+<%= form_with(model: unit_amenity, local: true) do |form| %>
+  <% if unit_amenity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(unit_amenity.errors.count, "error") %> prohibited this unit_amenity from being saved:</h2>
+
+      <ul>
+      <% unit_amenity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :guid %>
+    <%= form.text_field :guid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :short_code %>
+    <%= form.text_field :short_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :show_in_sales_center_filter_dropdown %>
+    <%= form.check_box :show_in_sales_center_filter_dropdown %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
