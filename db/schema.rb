@@ -211,7 +211,39 @@ ActiveRecord::Schema.define(version: 2019_02_28_053812) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "units" because of following StandardError
-#   Unknown type 'strin' for column 'access_type'
+  create_table "units", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "price", precision: 8, scale: 2
+    t.string "name"
+    t.text "description"
+    t.float "area"
+    t.string "uom"
+    t.string "guid"
+    t.integer "width"
+    t.integer "length"
+    t.integer "height"
+    t.integer "door_height"
+    t.integer "door_width"
+    t.string "door_type"
+    t.string "access_type"
+    t.integer "floor"
+    t.string "size"
+    t.float "standard_rate"
+    t.float "managed_rate"
+    t.boolean "available_for_move_in"
+    t.boolean "rentable"
+    t.string "status"
+    t.string "payment_status"
+    t.string "current_ledger_guid"
+    t.string "current_tenant_guid"
+    t.string "combination_lock_number"
+    t.string "attribute_description"
+    t.boolean "deleted"
+    t.boolean "damaged"
+    t.boolean "complimentary"
+    t.integer "unit_group_id"
+    t.index ["unit_group_id"], name: "index_units_on_unit_group_id"
+  end
 
 end

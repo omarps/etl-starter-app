@@ -7,22 +7,19 @@ module Etl
         
         executed do |ctx|
           ctx.units_csv_hash.each do |unit|
-            # next unless ::UnitGroup.exists?(guid: unit['unit_group_id'])
-            # unit['guid'] = unit.delete('id')
-            # unit['current_ledger_guid'] = unit.delete('current_ledger_id')
-            # unit['current_tenant_guid'] = unit.delete('current_tenant_id')
-            # unit.delete('channel_rate')
-            # unit_amenities = unit.delete('unit_amenities')
-            
             unless ::UnitGroup.exists?(guid: unit['unit_group_id'])
-              # ar_unit = ::Unit.new(unit)
-              # ar_unit.unit_group = ::UnitGroup.find_by(guid: unit.delete('unit_group_id'))
-              # ar_unit.save!
               ::UnitGroup.create!(guid: unit['unit_group_id'])
             end
             
-            # process_unit_amenities(unit['guid'], unit_amenities)
+            process_unit_type(unit['unit_group_id'], unit['unit_type'])
           end
+        end
+        
+        def self.process_unit_type(guid, unit_type)
+          return unless ::UnitGroup.exists?(guid: guid) && !unit_type.nil?
+          unit_group = ::UnitGroup.find_by(guid: guid)
+          unit_group.unit_type = ::UnitType.find_by(name: unit_type)
+          unit_group.save!
         end
       end
     end

@@ -3,6 +3,7 @@ require_relative '../actions/json/unit_amenities_action'
 require_relative '../actions/json/units_action'
 require_relative '../actions/csv/units_parser_action'
 require_relative '../actions/csv/unit_groups_action'
+require_relative '../actions/csv/unit_amenities_action'
 require_relative '../actions/csv/units_action'
 
 module Etl
@@ -17,6 +18,7 @@ module Etl
           ::Etl::Actions::Json::UnitsAction,
           ::Etl::Actions::Csv::UnitsParserAction,
           ::Etl::Actions::Csv::UnitGroupsAction,
+          ::Etl::Actions::Csv::UnitAmenitiesAction,
           ::Etl::Actions::Csv::UnitsAction
         )
       end

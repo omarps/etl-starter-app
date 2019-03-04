@@ -21,9 +21,17 @@ module Etl
               ar_unit.save!
             end
             
-            # process_unit_amenities(unit['guid'], unit_amenities)
-            # process_unit_type(unit['guid'], unit_type)
+            process_unit_amenities(unit['guid'], unit_amenities)
           end
+        end
+        
+        def self.process_unit_amenities(guid, unit_amenities)
+          return unless ::Unit.exists?(guid: guid) || !unit_amenities.empty?
+          unit = ::Unit.find_by(guid: guid)
+          unit_amenities.split('|').each do |unit_amenity|
+            unit.unit_amenities << ::UnitAmenity.find_by(name: unit_amenity.strip)
+          end
+          unit.save!
         end
       end
     end

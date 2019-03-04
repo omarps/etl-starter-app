@@ -39,7 +39,7 @@ rails g migration add_channel_rate_guids_to_unit_groups channel_rate_guids:text
 # join table unit_amenities - xx keep only to units
 # join table: invoiceable_fees, discount_plans
 
-rails g migration add_fields_to_units guid:string width:integer length:integer height:intege door_height:intege door_width:intege door_type:string access_type:strin floor:intege size:strin standard_rate:floa managed_rate:floa available_for_move_in:boolea rentable:boolea status:string payment_status:strin current_ledger_guid:strin current_tenant_guid:strin combination_lock_number:strin attribute_description:strin deleted:boolea damaged:boolea complimentary:boolean unit_group:references
+rails g migration add_fields_to_units guid:string width:integer length:integer height:integer door_height:integer door_width:integer door_type:string access_type:string floor:integer size:string standard_rate:float managed_rate:float available_for_move_in:boolean rentable:boolean status:string payment_status:string current_ledger_guid:string current_tenant_guid:string combination_lock_number:string attribute_description:string deleted:boolean damaged:boolean complimentary:boolean unit_group:references
 # xx channel_rate keep only unit group
 # join table unit_amenities
 
