@@ -10,9 +10,8 @@ module Etl
             unit_group['discount_plans'].each do |discount_plan|
               discount_plan['discount_plan_controls'].each do |control|
                 control['guid'] = control.delete('id')
-                unless ::Control.exists?(guid: control['guid'])
-                  ::Control.create!(control.except('unit_amenity_ids', 'discount_plan_ids', 'unit_type_id'))
-                end
+                control.except!('unit_amenity_ids', 'discount_plan_ids', 'unit_type_id')
+                Etl::Actions::Utils::ar_create(ctx, ::Control, control)
               end
             end
           end

@@ -16,10 +16,8 @@ module Etl
               discount_plan_discounts = discount_plan.delete('discount_plan_discounts')
               discount_plan_controls = discount_plan.delete('discount_plan_controls')
               client_applications = discount_plan.delete('client_applications')
-              
-              unless ::DiscountPlan.exists?(guid: discount_plan['guid'])
-                ::DiscountPlan.create!(discount_plan)
-              end
+
+              Etl::Actions::Utils::ar_create(ctx, ::DiscountPlan, discount_plan)
               
               process_discount_plan_discounts(discount_plan['guid'], discount_plan_discounts)
               process_discount_plan_controls(discount_plan['guid'], discount_plan_controls)

@@ -10,9 +10,7 @@ module Etl
             next if unit_group['unit_type'].nil?
             unit_type = unit_group['unit_type']
             unit_type['guid'] = unit_type.delete('id')
-            unless ::UnitType.exists?(guid: unit_type['guid'])
-              ::UnitType.create!(unit_type)
-            end
+            Etl::Actions::Utils::ar_create(ctx, ::UnitType, unit_type)
           end
         end
       end

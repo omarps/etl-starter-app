@@ -7,9 +7,7 @@ module Etl
         
         executed do |ctx|
           ctx.units_csv_hash.each do |unit|
-            unless ::UnitGroup.exists?(guid: unit['unit_group_id'])
-              ::UnitGroup.create!(guid: unit['unit_group_id'])
-            end
+            Etl::Actions::Utils::ar_create(ctx, ::UnitGroup, { guid: unit['unit_group_id'] }, :guid, 'unit_group_id')
             
             process_unit_type(unit['unit_group_id'], unit['unit_type'])
           end

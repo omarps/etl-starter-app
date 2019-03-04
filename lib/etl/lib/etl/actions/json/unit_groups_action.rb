@@ -15,10 +15,8 @@ module Etl
             unit_amenities = unit_group.delete('unit_amenities')
             unit_type = unit_group.delete('unit_type')
             discount_plans = unit_group.delete('discount_plans')
-            
-            unless ::UnitGroup.exists?(guid: unit_group['guid'])
-              ::UnitGroup.create!(unit_group)
-            end
+
+            Etl::Actions::Utils::ar_create(ctx, ::UnitGroup, unit_group)
             
             process_invoiceable_fees(unit_group['guid'], invoiceable_fees)
             process_channel_rate(unit_group['guid'], channel_rate)

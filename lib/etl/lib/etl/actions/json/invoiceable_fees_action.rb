@@ -9,9 +9,7 @@ module Etl
           ctx.unit_groups_hash.each do |unit_group|
             unit_group['invoiceable_fees'].each do |invoiceable_fee|
               invoiceable_fee['guid'] = invoiceable_fee.delete('id')
-              unless ::InvoiceableFee.exists?(guid: invoiceable_fee['guid'])
-                ::InvoiceableFee.create!(invoiceable_fee)
-              end
+              Etl::Actions::Utils::ar_create(ctx, ::InvoiceableFee, invoiceable_fee)
             end
           end
         end

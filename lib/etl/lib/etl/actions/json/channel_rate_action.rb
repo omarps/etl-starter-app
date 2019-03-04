@@ -12,9 +12,7 @@ module Etl
             channel_rate['guid'] = channel_rate.delete('id')
             channel_rate['channel_guid'] = channel_rate.delete('channel_id')
             channel_rate['facility_guid'] = channel_rate.delete('facility_id')
-            unless ::ChannelRate.exists?(guid: channel_rate['guid'])
-              ::ChannelRate.create!(channel_rate)
-            end
+            Etl::Actions::Utils::ar_create(ctx, ::ChannelRate, channel_rate)
           end
         end
       end

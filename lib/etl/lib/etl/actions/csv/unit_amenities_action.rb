@@ -11,9 +11,7 @@ module Etl
             unit_amenities = unit_amenities.split('|').map(&:strip)
             unit_amenities.each do |unit_amenity|
               next if unit_amenity.nil? || unit_amenity.empty? || ['nil', 'null'].include?(unit_amenity)
-              unless ::UnitAmenity.exists?(name: unit_amenity)
-                ::UnitAmenity.create!(name: unit_amenity)
-              end
+              Etl::Actions::Utils::ar_create(ctx, ::UnitAmenity, { name: unit_amenity }, :name, unit_amenity)
             end
           end
         end

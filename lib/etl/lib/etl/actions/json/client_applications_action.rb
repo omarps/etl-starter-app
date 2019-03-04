@@ -10,9 +10,7 @@ module Etl
             unit_group['discount_plans'].each do |discount_plan|
               discount_plan['client_applications'].each do |client_application|
                 client_application['guid'] = client_application.delete('id')
-                unless ::ClientApplication.exists?(guid: client_application['guid'])
-                  ::ClientApplication.create!(client_application)
-                end
+                Etl::Actions::Utils::ar_create(ctx, ::ClientApplication, client_application)
               end
             end
           end

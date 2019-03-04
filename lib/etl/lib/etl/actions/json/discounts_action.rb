@@ -10,9 +10,7 @@ module Etl
             unit_group['discount_plans'].each do |discount_plan|
               discount_plan['discount_plan_discounts'].each do |discount|
                 discount['guid'] = discount.delete('id')
-                unless ::Discount.exists?(guid: discount['guid'])
-                  ::Discount.create!(discount)
-                end
+                Etl::Actions::Utils::ar_create(ctx, ::Discount, discount)
               end
             end
           end

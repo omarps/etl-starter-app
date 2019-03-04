@@ -5,6 +5,7 @@ require_relative '../actions/csv/units_parser_action'
 require_relative '../actions/csv/unit_groups_action'
 require_relative '../actions/csv/unit_amenities_action'
 require_relative '../actions/csv/units_action'
+require_relative '../actions/utils'
 
 module Etl
   module Organizers

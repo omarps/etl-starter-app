@@ -26,7 +26,7 @@ module Etl
         end
         
         def self.process_unit_amenities(guid, unit_amenities)
-          return unless ::Unit.exists?(guid: guid) || !unit_amenities.empty?
+          return unless ::Unit.exists?(guid: guid) && !unit_amenities.nil?
           unit = ::Unit.find_by(guid: guid)
           unit_amenities.split('|').each do |unit_amenity|
             unit.unit_amenities << ::UnitAmenity.find_by(name: unit_amenity.strip)
