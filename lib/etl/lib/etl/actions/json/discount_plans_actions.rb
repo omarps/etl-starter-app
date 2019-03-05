@@ -19,41 +19,20 @@ module Etl
 
               Etl::Actions::Utils::ar_create(ctx, ::DiscountPlan, discount_plan)
               
-              process_discount_plan_discounts(discount_plan['guid'], discount_plan_discounts)
-              process_discount_plan_controls(discount_plan['guid'], discount_plan_controls)
-              process_client_applications(discount_plan['guid'], client_applications)
+              Etl::Actions::Utils::ar_has_many_save!(
+                ::DiscountPlan, discount_plan['guid'],
+                ::Discount, :discounts, discount_plan_discounts
+              )
+              Etl::Actions::Utils::ar_has_many_save!(
+                ::DiscountPlan, discount_plan['guid'],
+                ::Control, :controls, discount_plan_controls
+              )
+              Etl::Actions::Utils::ar_has_many_save!(
+                ::DiscountPlan, discount_plan['guid'],
+                ::ClientApplication, :client_applications, client_applications
+              )
             end
           end
-        end
-        
-        def self.process_discount_plan_discounts(guid, discount_plan_discounts)
-          # TODO: validate discount exists?
-          return unless ::DiscountPlan.exists?(guid: guid) || !discount_plan_discounts.empty?
-          discount_plan = ::DiscountPlan.find_by(guid: guid)
-          discount_plan_discounts.each do |discount|
-            discount_plan.discounts << ::Discount.find_by(guid: discount['guid'])
-          end
-          discount_plan.save!
-        end
-        
-        def self.process_discount_plan_controls(guid, discount_plan_controls)
-          # TODO: validate discount exists?
-          return unless ::DiscountPlan.exists?(guid: guid) || !discount_plan_controls.empty?
-          discount_plan = ::DiscountPlan.find_by(guid: guid)
-          discount_plan_controls.each do |control|
-            discount_plan.controls << ::Control.find_by(guid: control['guid'])
-          end
-          discount_plan.save!
-        end
-        
-        def self.process_client_applications(guid, client_applications)
-          # TODO: validate discount exists?
-          return unless ::DiscountPlan.exists?(guid: guid) || !client_applications.empty?
-          discount_plan = ::DiscountPlan.find_by(guid: guid)
-          client_applications.each do |client_application|
-            discount_plan.client_applications << ::ClientApplication.find_by(guid: client_application['guid'])
-          end
-          discount_plan.save!
         end
       end
     end

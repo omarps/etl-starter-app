@@ -7,17 +7,12 @@ module Etl
         
         executed do |ctx|
           ctx.units_csv_hash.each do |unit|
-            Etl::Actions::Utils::ar_create(ctx, ::UnitGroup, { guid: unit['unit_group_id'] }, :guid, 'unit_group_id')
-            
-            process_unit_type(unit['unit_group_id'], unit['unit_type'])
+            unit_group = {
+              guid: unit['unit_group_id'],
+              unit_type_id: ::UnitType.find_by(name: unit['unit_type']).id
+            }
+            Etl::Actions::Utils::ar_create(ctx, ::UnitGroup, unit_group, :guid, 'unit_group_id')
           end
-        end
-        
-        def self.process_unit_type(guid, unit_type)
-          return unless ::UnitGroup.exists?(guid: guid) && !unit_type.nil?
-          unit_group = ::UnitGroup.find_by(guid: guid)
-          unit_group.unit_type = ::UnitType.find_by(name: unit_type)
-          unit_group.save!
         end
       end
     end
