@@ -13,8 +13,8 @@ module Etl
     class UnitGroupsOrganizer
       extend ::LightService::Organizer
       
-      def self.call(unit_groups_text)
-        with(:unit_groups_text => unit_groups_text).reduce(
+      def self.call(unit_groups_filename)
+        with(:unit_groups_filename => unit_groups_filename).reduce(
           ::Etl::Actions::Json::UnitGroupsParserAction,
           ::Etl::Actions::Json::InvoiceableFeesAction,
           ::Etl::Actions::Json::ChannelRateAction,
