@@ -1,0 +1,92 @@
+{
+    "units": [
+        {
+            "id": "e2c3a9be-2e51-4766-ab22-dd5bfb9d9949",
+            "price": 27.5,
+            "name": "104",
+            "description": "Light in Unit, Âir Cooled, Heated, Stacked Space, 3rd floor",
+            "width": 5,
+            "length": 5,
+            "height": 8,
+            "door_height": 8,
+            "door_width": 3,
+            "door_type": "swing",
+            "access_type": "indoor",
+            "floor": 3,
+            "size": "5x5x8",
+            "area": 25,
+            "standard_rate": 45,
+            "managed_rate": 45,
+            "available_for_move_in": false,
+            "rentable": true,
+            "status": "occupied",
+            "payment_status": "overlocked",
+            "current_ledger_id": "22172415-d5f9-4987-a9ce-1d885e210fa2",
+            "current_tenant_id": "376c1a2f-586c-4a06-b788-306b7f63c7b6",
+            "combination_lock_number": null,
+            "attribute_description": "",
+            "deleted": false,
+            "damaged": false,
+            "complimentary": false,
+            "channel_rate": {
+                "id": "bd13de83-afe9-460a-982b-7642ea2cf893",
+                "base_rate_type": "standard_rate",
+                "modifier_type": "fixed",
+                "turned_on": true,
+                "turned_off_on": null,
+                "rate": 27.5,
+                "amount": 27.5,
+                "channel_name": "Web",
+                "channel_id": "1a372ad1-d769-4c9a-8fc7-f7ccada6476f",
+                "unit_group_id": "d209c320-3f9b-4abf-8c69-9a28bd727b6b",
+                "facility_id": "98d0f27e-aa50-4c9b-848c-ef644f18d7ca"
+            },
+            "unit_amenities": [
+                {
+                    "id": "3da744db-ca76-4dff-b0b9-f9377e60dff5",
+                    "name": "Light inU+0020Unit",
+                    "short_code": null,
+                    "show_in_sales_center_filter_dropdown": false
+                },
+                {
+                    "id": "f76e5337-f109-4eec-ad2c-3e6c2d480bcd",
+                    "name": "Âir Cooled",
+                    "short_code": null,
+                    "show_in_sales_center_filter_dropdown": false
+                },
+                {
+                    "id": "c1a04643-ad5f-400b-9550-22d1b88079af",
+                    "name": "Heated",
+                    "short_code": null,
+                    "show_in_sales_center_filter_dropdown": false
+                },
+                {
+                    "id": "25b58397-3bd9-4b67-8bcc-cf076f0ab5eb",
+                    "name": "Stacked Space",
+                    "short_code": null,
+                    "show_in_sales_center_filter_dropdown": false
+                }
+            ],
+            "unit_group_id": "ELAEZJEQFZLKAILZXYZJ"
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "current_page": 1,
+            "total_pages": 1,
+            "per_page": 2,
+            "total_entries": 99,
+            "previous_page": null,
+            "next_page": null
+        },
+        "status_code": 200,
+        "status_message": "OK",
+        "status_cat": "https://http.cat/200",
+        "request_method": "GET",
+        "request_id": "747bf65c-9c68-45e9-b680-059ee3153436",
+        "parameters": {
+            "facility_id": "98d0f27e-aa50-4c9b-848c-ef644f18d7ca",
+            "unit": {}
+        }
+    }
+}

@@ -1,0 +1,355 @@
+{
+    "unit_groups": [
+        {
+            "id": "GWIGVZHZPMNFKVQDKCGE",
+            "price": 27.5,
+            "group_key": "5x5x8 - $45.00 - 10939 - [10305 - 10308 - 10309 - 10311] - 3",
+            "name": "5x5x8 - $45.00 - 10939 - [10305 - 10308 - 10309 - 10311] - 3",
+            "available_units_count": 0,
+            "total_units_count": 10,
+            "total_non_excluded_units_count": 10,
+            "size": "5x5x8",
+            "standard_rate": 45,
+            "floor": 3,
+            "reduced_price": 17.5,
+            "occupancy_percent": 70,
+            "area": 25,
+            "length": 5,
+            "width": 5,
+            "height": 8,
+            "due_at_move_in": 42.5,
+            "due_at_move_in_without_fees": 17.5,
+            "due_monthly": 17.5,
+            "attribute_description": "",
+            "description": "Air Cooled, Heated, Light in Unit, Stacked Space, 3rd floor",
+            "invoiceable_fees": [
+                {
+                    "id": "b39cd5a8-2b4a-4874-83bb-b446d5527526",
+                    "product_code": "ADMIN_FEE",
+                    "kind": "fee",
+                    "description": "Administrative Fee",
+                    "required_at_move_in": true,
+                    "required_at_transfer": false,
+                    "amount": 25,
+                    "short_description": null,
+                    "show_in_sales_center": false,
+                    "tax_total": 0,
+                    "total": 25
+                }
+            ],
+            "average_rent": 45.71,
+            "active_rate_type": "managed_rate",
+            "channel_rate": {
+                "id": "bd13de83-afe9-460a-982b-7642ea2cf893",
+                "base_rate_type": "standard_rate",
+                "modifier_type": "fixed",
+                "turned_on": true,
+                "turned_off_on": null,
+                "rate": 27.5,
+                "amount": 27.5,
+                "channel_name": "Web",
+                "channel_id": "1a372ad1-d769-4c9a-8fc7-f7ccada6476f",
+                "facility_id": "98d0f27e-aa50-4c9b-848c-ef644f18d7ca"
+            },
+            "unit_amenities": [
+                {
+                    "id": "3da744db-ca76-4dff-b0b9-f9377e60dff5",
+                    "name": "Light in Unit",
+                    "short_code": null,
+                    "show_in_sales_center_filter_dropdown": false
+                },
+                {
+                    "id": "f76e5337-f109-4eec-ad2c-3e6c2d480bcd",
+                    "name": "Air Cooled",
+                    "short_code": null,
+                    "show_in_sales_center_filter_dropdown": false
+                },
+                {
+                    "id": "c1a04643-ad5f-400b-9550-22d1b88079af",
+                    "name": "Heated",
+                    "short_code": null,
+                    "show_in_sales_center_filter_dropdown": false
+                },
+                {
+                    "id": "25b58397-3bd9-4b67-8bcc-cf076f0ab5eb",
+                    "name": "Stacked Space",
+                    "short_code": null,
+                    "show_in_sales_center_filter_dropdown": false
+                }
+            ],
+            "unit_type": {
+                "id": "bf56a032-85b2-429a-9d77-8b8e5c9e2620",
+                "name": "Self-Storage Unit",
+                "deleted": false,
+                "internal_account_code": "4000",
+                "code_and_description": "4000 - Rental Revenue"
+            },
+            "discount_plans": [
+                {
+                    "id": "4db37156-514c-4486-bf52-1ed1b8e17b6d",
+                    "name": "$1",
+                    "description": "$1 Move in",
+                    "public_description": "$1 Move in",
+                    "availability_text": "6/12/2018",
+                    "requirements_text": "1 month prepay",
+                    "kind": "limited",
+                    "min_occupancy_required": false,
+                    "min_occupancy_months": 1,
+                    "prepay_required": true,
+                    "prepay_months": 1,
+                    "start_date": "2018-06-12",
+                    "end_date": null,
+                    "auto_apply": true,
+                    "promotion_type": "promotion",
+                    "deleted": false,
+                    "turned_on": true,
+                    "available_for_all_facilities": true,
+                    "round_to_nearest": null,
+                    "hide_from_website": false,
+                    "move_in_only": false,
+                    "tenant_account_kind_id": null,
+                    "existing_tenant_only": false,
+                    "priority": 2,
+                    "role_permission": null,
+                    "discount_plan_discounts": [
+                        {
+                            "id": "ee422f7f-640e-48c1-92e1-62169002f000",
+                            "discount_type": "none",
+                            "month_number": 1,
+                            "amount": 1,
+                            "minimum_amount": null,
+                            "maximum_amount": null
+                        },
+                        {
+                            "id": "8f293f02-211d-4259-a6a0-ac60424e00a7",
+                            "discount_type": "fixed",
+                            "month_number": 2,
+                            "amount": 1,
+                            "minimum_amount": null,
+                            "maximum_amount": null
+                        }
+                    ],
+                    "discount_plan_controls": [
+                        {
+                            "id": "5a1b5759-d977-49dc-b8c6-4f43f8224959",
+                            "kind": "unit_size",
+                            "min_value": 24,
+                            "max_value": 26,
+                            "deleted": false,
+                            "deleted_on": null,
+                            "requirements_text": "Sq ft between 24 and 26",
+                            "applicable_discount_plans_count": 1,
+                            "unit_amenity_ids": [],
+                            "discount_plan_ids": [
+                                "4db37156-514c-4486-bf52-1ed1b8e17b6d"
+                            ],
+                            "unit_type_id": null
+                        }
+                    ],
+                    "api_association_ids": [
+                        "cf8a8b1d-3dd5-4dd9-abea-f4b47ab0c78e",
+                        "d8608142-49a6-441f-bbdc-2312c56c75b6",
+                        "f670ec49-7a10-430b-88a1-b00c08c9f303",
+                        "c213e2e1-1f2d-4e42-bea7-06a73d89c962"
+                    ],
+                    "client_applications": [
+                        {
+                            "id": "668ff499-7ce7-4d1f-b7a8-8ce344654176",
+                            "name": "Online Marketing Service - G5",
+                            "channel_rates_on": true,
+                            "internal": false
+                        },
+                        {
+                            "id": "e9d6fd20-78fa-0134-c043-0a9b5cc99ca5",
+                            "name": "storEDGE Unified Platform",
+                            "channel_rates_on": false,
+                            "internal": false
+                        },
+                        {
+                            "id": "e6f1b080-78fa-0134-c043-0a9b5cc99ca5",
+                            "name": "FMS",
+                            "channel_rates_on": false,
+                            "internal": false
+                        },
+                        {
+                            "id": "ecfe1110-78fa-0134-c043-0a9b5cc99ca5",
+                            "name": "storEDGE Rental Center",
+                            "channel_rates_on": true,
+                            "internal": false
+                        }
+                    ],
+                    "always_discount_plan_discount_id": "8f293f02-211d-4259-a6a0-ac60424e00a7",
+                    "facility_ids": [
+                        "98d0f27e-aa50-4c9b-848c-ef644f18d7ca",
+                        "98d0f27e-aa50-4c9b-848c-ef644f18d7ca"
+                    ]
+                },
+                {
+                    "id": "8870a06f-fd0f-4d38-af9d-fa3b6a201884",
+                    "name": "MGMT-S",
+                    "description": "Manager's Special",
+                    "public_description": "",
+                    "availability_text": "6/12/2018",
+                    "requirements_text": "",
+                    "kind": "always",
+                    "min_occupancy_required": false,
+                    "min_occupancy_months": 1,
+                    "prepay_required": false,
+                    "prepay_months": 1,
+                    "start_date": "2018-06-12",
+                    "end_date": null,
+                    "auto_apply": false,
+                    "promotion_type": "promotion",
+                    "deleted": false,
+                    "turned_on": true,
+                    "available_for_all_facilities": true,
+                    "round_to_nearest": null,
+                    "hide_from_website": false,
+                    "move_in_only": false,
+                    "tenant_account_kind_id": null,
+                    "existing_tenant_only": false,
+                    "priority": null,
+                    "role_permission": null,
+                    "discount_plan_discounts": [
+                        {
+                            "id": "20e01364-609e-404f-9393-98d9826f8eec",
+                            "discount_type": "amount",
+                            "month_number": 1,
+                            "amount": 5,
+                            "minimum_amount": null,
+                            "maximum_amount": null
+                        }
+                    ],
+                    "discount_plan_controls": [],
+                    "api_association_ids": [
+                        "d8608142-49a6-441f-bbdc-2312c56c75b6",
+                        "f670ec49-7a10-430b-88a1-b00c08c9f303",
+                        "cf8a8b1d-3dd5-4dd9-abea-f4b47ab0c78e",
+                        "c213e2e1-1f2d-4e42-bea7-06a73d89c962"
+                    ],
+                    "client_applications": [
+                        {
+                            "id": "e9d6fd20-78fa-0134-c043-0a9b5cc99ca5",
+                            "name": "storEDGE Unified Platform",
+                            "channel_rates_on": false,
+                            "internal": false
+                        },
+                        {
+                            "id": "e6f1b080-78fa-0134-c043-0a9b5cc99ca5",
+                            "name": "FMS",
+                            "channel_rates_on": false,
+                            "internal": false
+                        },
+                        {
+                            "id": "668ff499-7ce7-4d1f-b7a8-8ce344654176",
+                            "name": "Online Marketing Service - G5",
+                            "channel_rates_on": true,
+                            "internal": false
+                        },
+                        {
+                            "id": "ecfe1110-78fa-0134-c043-0a9b5cc99ca5",
+                            "name": "storEDGE Rental Center",
+                            "channel_rates_on": true,
+                            "internal": false
+                        }
+                    ],
+                    "always_discount_plan_discount_id": "20e01364-609e-404f-9393-98d9826f8eec",
+                    "facility_ids": [
+                        "98d0f27e-aa50-4c9b-848c-ef644f18d7ca",
+                        "98d0f27e-aa50-4c9b-848c-ef644f18d7ca"
+                    ]
+                },
+                {
+                    "id": "485278d4-cfee-4a07-8dc6-a294defcbca8",
+                    "name": "STUDENTDISCOUNT",
+                    "description": "studentdiscount",
+                    "public_description": "Students Save",
+                    "availability_text": "10/22/2018",
+                    "requirements_text": "",
+                    "kind": "always",
+                    "min_occupancy_required": false,
+                    "min_occupancy_months": 1,
+                    "prepay_required": false,
+                    "prepay_months": 1,
+                    "start_date": "2018-10-22",
+                    "end_date": null,
+                    "auto_apply": true,
+                    "promotion_type": "rate_modification",
+                    "deleted": false,
+                    "turned_on": true,
+                    "available_for_all_facilities": true,
+                    "round_to_nearest": null,
+                    "hide_from_website": false,
+                    "move_in_only": false,
+                    "tenant_account_kind_id": null,
+                    "existing_tenant_only": false,
+                    "priority": 2,
+                    "role_permission": null,
+                    "discount_plan_discounts": [
+                        {
+                            "id": "588c4b42-c394-4211-9f53-d235ed8671e1",
+                            "discount_type": "amount",
+                            "month_number": 1,
+                            "amount": 10,
+                            "minimum_amount": null,
+                            "maximum_amount": null
+                        }
+                    ],
+                    "discount_plan_controls": [],
+                    "api_association_ids": [
+                        "cf8a8b1d-3dd5-4dd9-abea-f4b47ab0c78e",
+                        "d8608142-49a6-441f-bbdc-2312c56c75b6",
+                        "f670ec49-7a10-430b-88a1-b00c08c9f303"
+                    ],
+                    "client_applications": [
+                        {
+                            "id": "668ff499-7ce7-4d1f-b7a8-8ce344654176",
+                            "name": "Online Marketing Service - G5",
+                            "channel_rates_on": true,
+                            "internal": false
+                        },
+                        {
+                            "id": "e9d6fd20-78fa-0134-c043-0a9b5cc99ca5",
+                            "name": "storEDGE Unified Platform",
+                            "channel_rates_on": false,
+                            "internal": false
+                        },
+                        {
+                            "id": "e6f1b080-78fa-0134-c043-0a9b5cc99ca5",
+                            "name": "FMS",
+                            "channel_rates_on": false,
+                            "internal": false
+                        }
+                    ],
+                    "always_discount_plan_discount_id": "588c4b42-c394-4211-9f53-d235ed8671e1",
+                    "facility_ids": [
+                        "98d0f27e-aa50-4c9b-848c-ef644f18d7ca"
+                    ]
+                }
+            ],
+            "scheduled_move_out_ids": [],
+            "channel_rate_ids": [
+                "bd13de83-afe9-460a-982b-7642ea2cf893"
+            ]
+        }
+   ],
+    "meta": {
+        "pagination": {
+            "current_page": 1,
+            "total_pages": 1,
+            "per_page": 100,
+            "total_entries": 10,
+            "previous_page": null,
+            "next_page": null
+        },
+        "status_code": 200,
+        "status_message": "OK",
+        "status_cat": "https://http.cat/200",
+        "request_method": "GET",
+        "request_id": "KESKFONDREWMFXFFYUHN",
+        "parameters": {
+            "facility_id": "OOMCOAAJGUXPGNTJNVQV",
+            "unit_group": {}
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "unit_groups": [],
+    "meta": {
+        "pagination": {
+            "current_page": 1,
+            "total_pages": 1,
+            "per_page": 100,
+            "total_entries": 10,
+            "previous_page": null,
+            "next_page": null
+        },
+        "status_code": 200,
+        "status_message": "OK",
+        "status_cat": "https://http.cat/200",
+        "request_method": "GET",
+        "request_id": "KESKFONDREWMFXFFYUHN",
+        "parameters": {
+            "facility_id": "OOMCOAAJGUXPGNTJNVQV",
+            "unit_group": {}
+        }
+    }
+}

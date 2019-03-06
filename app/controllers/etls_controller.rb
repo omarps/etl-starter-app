@@ -10,7 +10,7 @@ class EtlsController < ApplicationController
     if params[:etl] == 'units.json'
       service_result = Etl::Organizers::UnitsOrganizer.call(
         units_json_dirpath: './data/json/*_units.json',
-        unit_groups_csv_filename: './data/csv/units.csv'
+        units_csv_filename: './data/csv/units.csv'
       )
     end
   end
